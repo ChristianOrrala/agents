@@ -1,7 +1,9 @@
-# Christian Orrala's plugins
+# Christian Orrala's agents
 
-A plugin marketplace for coding agents. Each plugin lives in its own
-repository; this one lists them so you can install them by name.
+A catalog for coding agents and the tools around them: skills, plugins and
+mods for Claude Code, Codex and, as they arrive, OpenCode, Orca and Herdr.
+Big products live in their own repositories; this one lists them so you can
+install them by name. Small skills and plugins live here.
 
 | Plugin | What it does | Repository |
 |---|---|---|
@@ -15,17 +17,33 @@ Add the marketplace once, then install the plugins you want.
 Claude Code:
 
 ```text
-/plugin marketplace add ChristianOrrala/plugins
-/plugin install upspec@christian-orrala
-/plugin install a-files@christian-orrala
+/plugin marketplace add ChristianOrrala/agents
+/plugin install upspec@christianorrala
+/plugin install a-files@christianorrala
 ```
+
+On Claude Code 2.1.275 or later, one line does both:
+`/plugin install upspec --marketplace ChristianOrrala/agents`.
 
 Codex:
 
 ```text
-codex plugin marketplace add ChristianOrrala/plugins
-codex plugin add upspec@christian-orrala
-codex plugin add a-files@christian-orrala
+codex plugin marketplace add ChristianOrrala/agents
+codex plugin add upspec@christianorrala
+codex plugin add a-files@christianorrala
+```
+
+### Moving from `christian-orrala`
+
+The marketplace used to be called `christian-orrala`, in a repository named
+`plugins`. If you added it under that name, remove it and add it again. This
+uninstalls its plugins, so install them again afterwards:
+
+```text
+/plugin marketplace remove christian-orrala
+/plugin marketplace add ChristianOrrala/agents
+/plugin install upspec@christianorrala
+/plugin install a-files@christianorrala
 ```
 
 ## Using them together
@@ -34,6 +52,11 @@ Each plugin works alone. In one project they work together: the A-files
 track the work, and each ability in `ABILITIES.md` links to the upspec use
 cases that specify it.
 Each plugin's README explains how to start.
+
+## How this repository is organized
+
+[AGENTS.md](AGENTS.md) holds the layout and its rules: what goes where, how a
+new skill, plugin or host joins, and how each one is released.
 
 ## License
 

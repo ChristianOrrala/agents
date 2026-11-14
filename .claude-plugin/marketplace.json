@@ -1,9 +1,10 @@
 {
-  "name": "christian-orrala",
+  "name": "christianorrala",
   "owner": {
-    "name": "Christian Orrala"
+    "name": "Christian Orrala",
+    "url": "https://github.com/ChristianOrrala"
   },
-  "description": "Two products for coding agents: the A-files, five files every agent reads first, and stack-neutral skills for spec-driven development with use cases.",
+  "description": "Christian Orrala's catalog for coding agents: the A-files, five files every agent reads first, and upspec, stack-neutral skills for spec-driven development with use cases.",
   "plugins": [
     {
       "name": "a-files",

@@ -1,0 +1,20 @@
+{
+  "name": "christianorrala",
+  "version": "0.1.0",
+  "description": "Christian Orrala's small skills for coding agents, in one install.",
+  "author": {
+    "name": "Christian Orrala",
+    "url": "https://github.com/ChristianOrrala"
+  },
+  "homepage": "https://github.com/ChristianOrrala/agents",
+  "repository": "https://github.com/ChristianOrrala/agents",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Christian Orrala",
+    "shortDescription": "Small skills for coding agents",
+    "developerName": "Christian Orrala",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/ChristianOrrala/agents"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "christianorrala",
+  "version": "0.1.0",
+  "description": "Christian Orrala's small skills for coding agents, in one install.",
+  "author": {
+    "name": "Christian Orrala",
+    "url": "https://github.com/ChristianOrrala"
+  },
+  "homepage": "https://github.com/ChristianOrrala/agents",
+  "repository": "https://github.com/ChristianOrrala/agents",
+  "license": "MIT"
+}
