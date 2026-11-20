@@ -53,15 +53,55 @@ if has_skills and not listed:
 if listed and not has_skills:
     errors.append("the bundle is in the catalogs but skills/ is empty")
 
+# 5. The Orca catalog: our ids, no images (Rule 7), and the legacy file in step.
+orca_catalog = root / "orca-catalog.json"
+if orca_catalog.exists():
+    orca = json.loads(orca_catalog.read_text())
+    if orca.get("catalogVersion") != 2:
+        errors.append("orca-catalog.json: catalogVersion is not 2")
+    for entry in orca.get("plugins", []):
+        if not entry.get("id", "").startswith("christianorrala."):
+            errors.append(f"orca-catalog.json: '{entry.get('id')}' is not under christianorrala.")
+        if not entry.get("releases"):
+            errors.append(f"orca-catalog.json: '{entry.get('id')}' has no releases")
+        for release in entry.get("releases", []):
+            if "images" in release:
+                errors.append(f"orca-catalog.json: '{entry['id']}' {release.get('version')} has images (Rule 7)")
+    # Same projection as Orca's export-legacy-plugin-catalog.mjs.
+    legacy = {
+        "name": orca.get("name"),
+        "owner": orca.get("owner"),
+        "plugins": [
+            {
+                "id": e["id"],
+                "source": {k: e["source"][k] for k in ("kind", "url", "ref")},
+                **({"description": e["description"]} if e.get("description") else {}),
+                "categories": e.get("categories", []),
+            }
+            for e in orca.get("plugins", []) if not e["source"].get("path")
+        ],
+    }
+    marketplace = root / "orca-marketplace.json"
+    if not marketplace.exists() or json.loads(marketplace.read_text()) != legacy:
+        errors.append("orca-marketplace.json is missing or out of step with orca-catalog.json (AGENTS.md, Releasing)")
+
 for error in errors:
     print(f"FAIL {error}")
 if errors:
     sys.exit(1)
-print("OK   manifests, skill names and catalogs")
+print("OK   manifests, skill names and catalogs (Claude, Codex, Orca)")
 PY
 
 if command -v claude >/dev/null 2>&1; then
   claude plugin validate .
 else
   echo "SKIP claude plugin validate (no claude CLI)"
+fi
+
+if [ -f orca-catalog.json ]; then
+  if command -v orca >/dev/null 2>&1; then
+    orca plugin validate orca-catalog.json
+  else
+    echo "SKIP orca plugin validate (no orca CLI)"
+  fi
 fi

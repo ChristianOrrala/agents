@@ -34,6 +34,7 @@ agents/
 ├── .codex-plugin/plugin.json   # the same bundle for Codex
 ├── .agents/plugins/marketplace.json   # Codex catalog, the same entries where Codex can run them
 ├── orca-catalog.json           # Orca catalog (with the first Orca plugin)
+├── orca-marketplace.json       # generated from orca-catalog.json for Orca before catalog format 2
 ├── package.json                # private npm workspace root (with the first npm package)
 ├── .changeset/                 # npm versions (with the first npm package)
 │
@@ -138,6 +139,11 @@ Each host's catalog arrives with its first plugin, never empty.
 - **Orca:** create `orca-catalog.json`, add the entry printed by
   `orca plugin release-entry orca/<id>` (it includes `source.path`), run
   `orca plugin validate orca/<id>`, add the Orca install lines to the README.
+  Leave the entry's `images` out: catalog images are files in this
+  repository, and Rule 7 keeps images out of it. Then generate
+  `orca-marketplace.json` with Orca's
+  `config/scripts/plugin-authoring/content-validation/export-legacy-plugin-catalog.mjs`
+  (it drops entries with a `source.path`); never edit it by hand.
 - **Herdr:** add the GitHub topic `herdr-plugin` to this repository, then check
   the plugin appears on herdr.dev/plugins (the index refreshes every 30
   minutes); add the install line to the README.
@@ -156,11 +162,15 @@ Each host's catalog arrives with its first plugin, never empty.
   bundle's version lives in `.claude-plugin/plugin.json` and
   `.codex-plugin/plugin.json`; keep both the same.
 - **npm:** Changesets versions each package; CI publishes.
-- **Orca:** a new release entry per plugin commit in `orca-catalog.json`.
+- **Orca:** a new release entry per plugin commit in `orca-catalog.json`,
+  newest first, without `images`; regenerate `orca-marketplace.json` after
+  every change to the catalog.
 
 ## Checks
 
 `scripts/validate.sh` runs before every push and in CI: it parses every JSON
 manifest, checks each skill's folder against its `name`, checks the two
-catalogs list the same plugins (mods aside), and runs
-`claude plugin validate .` when the `claude` CLI is present.
+catalogs list the same plugins (mods aside), checks `orca-catalog.json`
+(ids under `christianorrala.`, no `images`, `orca-marketplace.json` in step),
+and runs `claude plugin validate .` and `orca plugin validate
+orca-catalog.json` when those CLIs are present.

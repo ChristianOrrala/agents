@@ -1,7 +1,7 @@
 # Christian Orrala's agents
 
 A catalog for coding agents and the tools around them: skills, plugins and
-mods for Claude Code, Codex and, as they arrive, OpenCode, Orca and Herdr.
+mods for Claude Code, Codex and Orca and, as they arrive, OpenCode and Herdr.
 Big products live in their own repositories; this one lists them so you can
 install them by name. Small skills and plugins live here.
 
@@ -9,6 +9,7 @@ install them by name. Small skills and plugins live here.
 |---|---|---|
 | `upspec` | Fifteen skills for specification-first development with use cases, for any stack | [ChristianOrrala/upspec](https://github.com/ChristianOrrala/upspec) |
 | `a-files` | Five files every coding agent reads first, with the skill that keeps them, their check and a git hook | [ChristianOrrala/a-files](https://github.com/ChristianOrrala/a-files) |
+| `christianorrala.workflow-watch-orca` (Orca) | Workflow Watch for Orca: Open Dynamic Workflows and AgentPrism Workflows runs live in Orca's right sidebar. A community plugin, not made or endorsed by Orca or Stably | [ChristianOrrala/orca-workflow-watch](https://github.com/ChristianOrrala/orca-workflow-watch) |
 
 ## Install
 
@@ -31,6 +32,15 @@ Codex:
 codex plugin marketplace add ChristianOrrala/agents
 codex plugin add upspec@christianorrala
 codex plugin add a-files@christianorrala
+```
+
+Orca (1.4.248 or later for Workflow Watch). Adding the catalog and
+installing a plugin that runs code each ask once for `--approve` with the
+fingerprint Orca prints:
+
+```text
+orca plugin catalog add ChristianOrrala/agents
+orca plugin install christianorrala.workflow-watch-orca
 ```
 
 ### Moving from `christian-orrala`

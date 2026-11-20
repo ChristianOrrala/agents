@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-catalog.v2.schema.json",
+  "catalogVersion": 2,
+  "name": "christianorrala",
+  "owner": "christianorrala",
+  "plugins": [
+    {
+      "id": "christianorrala.workflow-watch-orca",
+      "source": {
+        "kind": "git",
+        "url": "https://github.com/ChristianOrrala/orca-workflow-watch.git",
+        "ref": "main"
+      },
+      "description": "Shows Open Dynamic Workflows and AgentPrism Workflows runs live in Orca's right sidebar, on this computer and on every paired server: phases, every agent as it works, the run's log, tokens, and a notification when a run finishes or waits for you. Read-only. A community plugin, not made or endorsed by Orca or Stably.",
+      "categories": ["workflows", "agents"],
+      "releases": [
+        {
+          "version": "0.3.0",
+          "commit": "ec2f866f84ea1e20369c7e2980da7195b15c2673",
+          "contentHash": "c0f82bc2a513fce92bfb41981d68ee7ca86243abdb2b520d70763ca6bae51cd2",
+          "execution": "trusted-worker",
+          "minimumOrca": "1.4.248",
+          "name": "Workflow Watch for Orca",
+          "contributes": [
+            { "kind": "panels", "name": "Workflows" },
+            { "kind": "commands", "name": "Workflow Watch for Orca: Show or hide the sidebar" },
+            { "kind": "statusBarItems", "name": "Workflows" }
+          ],
+          "capabilities": ["settings:own", "notifications:show"],
+          "license": "MIT",
+          "repository": "https://github.com/ChristianOrrala/orca-workflow-watch",
+          "homepage": "https://github.com/ChristianOrrala/orca-workflow-watch#readme",
+          "updatedAt": "2026-11-20",
+          "changelog": "First release in this catalog, under the id workflow-watch-orca."
+        }
+      ]
+    }
+  ]
+}
