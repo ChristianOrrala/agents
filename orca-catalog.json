@@ -18,6 +18,37 @@
       ],
       "releases": [
         {
+          "version": "0.4.0",
+          "commit": "23db1fa33244cc79e1c6fc4b1269c25a34e7ee10",
+          "contentHash": "3b8191732cb2f6e37961e262866b8dc432a1f7137d9cdad5045c0ff65f1a375a",
+          "execution": "trusted-worker",
+          "minimumOrca": "1.4.248",
+          "name": "Workflow Watch for Orca",
+          "contributes": [
+            {
+              "kind": "panels",
+              "name": "Workflows"
+            },
+            {
+              "kind": "commands",
+              "name": "Workflow Watch for Orca: Show or hide the sidebar"
+            },
+            {
+              "kind": "statusBarItems",
+              "name": "Workflows"
+            }
+          ],
+          "capabilities": [
+            "settings:own",
+            "notifications:show"
+          ],
+          "license": "MIT",
+          "repository": "https://github.com/ChristianOrrala/orca-workflow-watch",
+          "homepage": "https://github.com/ChristianOrrala/orca-workflow-watch#readme",
+          "updatedAt": "2026-11-20",
+          "changelog": "Paired servers' runs now show with catalog installs: each computer publishes its runs through its plugin log, read with orca plugin logs."
+        },
+        {
           "version": "0.3.2",
           "commit": "c8ddea4de5cb46690d3dfb587e47cde410e6bad1",
           "contentHash": "943edc8c9cec7bbfa214380b578b2f80ae34c39fdd07de79274459cd69ba94bc",
