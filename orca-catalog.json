@@ -12,8 +12,42 @@
         "ref": "main"
       },
       "description": "Shows Open Dynamic Workflows and AgentPrism Workflows runs live in Orca's right sidebar, on this computer and on every paired server: phases, every agent as it works, the run's log, tokens, and a notification when a run finishes or waits for you. Read-only. A community plugin, not made or endorsed by Orca or Stably.",
-      "categories": ["workflows", "agents"],
+      "categories": [
+        "workflows",
+        "agents"
+      ],
       "releases": [
+        {
+          "version": "0.3.1",
+          "commit": "9959584c913fec85a6e6d029eb25a064af400554",
+          "contentHash": "7cc9952d3132590e3aab2b0ee68262aa3a31ed006d95ca743bfad92e49ed0220",
+          "execution": "trusted-worker",
+          "minimumOrca": "1.4.248",
+          "name": "Workflow Watch for Orca",
+          "contributes": [
+            {
+              "kind": "panels",
+              "name": "Workflows"
+            },
+            {
+              "kind": "commands",
+              "name": "Workflow Watch for Orca: Show or hide the sidebar"
+            },
+            {
+              "kind": "statusBarItems",
+              "name": "Workflows"
+            }
+          ],
+          "capabilities": [
+            "settings:own",
+            "notifications:show"
+          ],
+          "license": "MIT",
+          "repository": "https://github.com/ChristianOrrala/orca-workflow-watch",
+          "homepage": "https://github.com/ChristianOrrala/orca-workflow-watch#readme",
+          "updatedAt": "2026-11-20",
+          "changelog": "New icon, cover and screenshots of real runs; README installs from the christianorrala catalog."
+        },
         {
           "version": "0.3.0",
           "commit": "ec2f866f84ea1e20369c7e2980da7195b15c2673",
@@ -22,11 +56,23 @@
           "minimumOrca": "1.4.248",
           "name": "Workflow Watch for Orca",
           "contributes": [
-            { "kind": "panels", "name": "Workflows" },
-            { "kind": "commands", "name": "Workflow Watch for Orca: Show or hide the sidebar" },
-            { "kind": "statusBarItems", "name": "Workflows" }
+            {
+              "kind": "panels",
+              "name": "Workflows"
+            },
+            {
+              "kind": "commands",
+              "name": "Workflow Watch for Orca: Show or hide the sidebar"
+            },
+            {
+              "kind": "statusBarItems",
+              "name": "Workflows"
+            }
           ],
-          "capabilities": ["settings:own", "notifications:show"],
+          "capabilities": [
+            "settings:own",
+            "notifications:show"
+          ],
           "license": "MIT",
           "repository": "https://github.com/ChristianOrrala/orca-workflow-watch",
           "homepage": "https://github.com/ChristianOrrala/orca-workflow-watch#readme",
