@@ -9,7 +9,7 @@
         "url": "https://github.com/ChristianOrrala/orca-workflow-watch.git",
         "ref": "main"
       },
-      "description": "Shows Open Dynamic Workflows and AgentPrism Workflows runs live in Orca's right sidebar, on this computer and on every paired server: phases, every agent as it works, the run's log, tokens, and a notification when a run finishes or waits for you. Read-only. A community plugin, not made or endorsed by Orca or Stably.",
+      "description": "Every workflow run, live, beside your code. Watch Open Dynamic Workflows and AgentPrism runs in Orca's sidebar, from this computer and your paired servers: each phase and agent on a timeline, the whole run log, and a notification when a run finishes or needs you. A community plugin, not made or endorsed by Orca.",
       "categories": [
         "workflows",
         "agents"
