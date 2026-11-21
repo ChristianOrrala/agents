@@ -18,6 +18,34 @@
       ],
       "releases": [
         {
+          "version": "0.5.1",
+          "commit": "2a2ee2550cfac6fb92eb2db507e4c964deb023ce",
+          "contentHash": "ec521d6e1ec44557178d03074aea565ca13c77cd364ddf8309ddd4fd6c3ef81f",
+          "execution": "trusted-worker",
+          "minimumOrca": "1.4.248",
+          "name": "Workflow Watch for Orca",
+          "contributes": [
+            {
+              "kind": "panels",
+              "name": "Workflows"
+            },
+            {
+              "kind": "commands",
+              "name": "Workflow Watch for Orca: Open Workflows"
+            },
+            {
+              "kind": "statusBarItems",
+              "name": "Workflows · Idle"
+            }
+          ],
+          "capabilities": [
+            "settings:own",
+            "notifications:show"
+          ],
+          "updatedAt": "2026-11-21",
+          "changelog": "Taller metro lines in the history, with a Metro line size setting (compact, comfortable, large). The status bar shows a pass in green for 15 minutes and a failure in red for 24 hours, then goes calm; both times are settings."
+        },
+        {
           "version": "0.5.0",
           "commit": "aadbea12552b47e88c4dc8ac2ad8642cfe2c3de7",
           "contentHash": "3c46ef79a1a2a39fe61140a9bacc466b1a0aabad5dac7b2dbdcb2b829ab32af6",
