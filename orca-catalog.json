@@ -18,6 +18,34 @@
       ],
       "releases": [
         {
+          "version": "0.5.0",
+          "commit": "aadbea12552b47e88c4dc8ac2ad8642cfe2c3de7",
+          "contentHash": "3c46ef79a1a2a39fe61140a9bacc466b1a0aabad5dac7b2dbdcb2b829ab32af6",
+          "execution": "trusted-worker",
+          "minimumOrca": "1.4.248",
+          "name": "Workflow Watch for Orca",
+          "contributes": [
+            {
+              "kind": "panels",
+              "name": "Workflows"
+            },
+            {
+              "kind": "commands",
+              "name": "Workflow Watch for Orca: Open Workflows"
+            },
+            {
+              "kind": "statusBarItems",
+              "name": "Workflows · Idle"
+            }
+          ],
+          "capabilities": [
+            "settings:own",
+            "notifications:show"
+          ],
+          "updatedAt": "2026-11-21",
+          "changelog": "The status bar shows workflow activity: how many runs are running, waiting or paused, the last result when nothing runs, and the active runs on hover. Click it to open Workflows."
+        },
+        {
           "version": "0.4.1",
           "commit": "9ccdfff70a25f44ffc01374cc3781be5aca36547",
           "contentHash": "9c1dd94acc097cc9ecedf2c90c36cb1ed500d6aa74c84b5b0d90b15ebb3384a0",
